@@ -20,10 +20,10 @@ endif
 ERL_LIBS=.:..:../kanin-tutorial:$(shell $(LFETOOL) info erllibs)
 OS := $(shell uname -s)
 ifeq ($(OS),Linux)
-        HOST=$(HOSTNAME)
+	HOST=$(HOSTNAME)
 endif
 ifeq ($(OS),Darwin)
-        HOST = $(shell scutil --get ComputerName)
+	HOST = $(shell scutil --get ComputerName)
 endif
 
 $(BIN_DIR):
@@ -58,6 +58,8 @@ clean-eunit:
 
 compile: get-deps clean-ebin
 	@echo "Compiling project code and dependencies ..."
+	@cd deps/kanin && make compile && \
+	mv deps/amqp_lib deps/rabbit_common ../
 	@which rebar.cmd >/dev/null 2>&1 && \
 	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar.cmd compile || \
 	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar compile

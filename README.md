@@ -11,6 +11,9 @@ mostly empty LFE project ... but one with all the proper dependencies defined.
 The intended use of this project is as a starting point for the developer who
 wants to walk through
 [the Kanin / RabbitMQ tutorials](https://github.com/billosys/kanin/blob/master/doc/tutorials.md).
+The completed code is available in [this repo](https://github.com/odacoder/kanin-tutorials),
+should you be uninterested in following along the tutorials and doing it
+yourself. Cheater.
 
 
 ## Use
